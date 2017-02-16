@@ -1,0 +1,22 @@
+#RewriteEngine On
+
+
+##disable for these file types
+#RewriteCond %{REQUERT_URI} !\.css$
+#RewriteCond %{REQUERT_URI} !\.png$
+#RewriteCond %{REQUERT_URI} !\.js$
+#RewriteCond %{REQUERT_URI} !\.zip$
+#RewriteCond %{REQUERT_URI} !\.html$
+#RewriteCond %{REQUERT_URI} !\.jpg
+
+#RewriteRule . framework/index.php
+
+
+<IfModule mod_rewrite.c>
+	#turn on rewrite engint
+	RewriteEngine On
+	#rewrite all requests to the webroot directory
+	RewriteRule ^$ webroot/ [L]
+	#all requests with extract symbols be redurected to the webroot with default parameter on the address window
+	RewriteRule (.*) webroot/$1 [L]
+</IfModule>

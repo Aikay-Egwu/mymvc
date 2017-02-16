@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title><?=Config::get('site_name')?></title>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+<div class="container">
+	<div class="navbar-header">
+		<a class="navbar-brand" href="/mymvc"><?=Config::get('site_name')?></a>
+	</div>
+	<div id="navbar" class="collapse navbar-collapse">
+		<ul class="nav navbar-nav">
+			<li <?php if (App::getRouter()->getController() == 'pages'){ ?> class = "active" <?php } ?>><a href="pages" title="Pages page">Pages</a></li><li <?php if (App::getRouter()->getController() == 'about'){ ?> class = "active" <?php } ?>><a href="about" title="Pages page">About</a></li>
+			<li <?php if (App::getRouter()->getController() == 'contacts'){ ?> class = "active" <?php } ?>><a href="contacts" title="Pages page">Contacts</a></li>
+			
+		</ul>
+	</div>
+	
+</div>
+	
+</nav>
+	<div class="container">
+	<?php if(Session::hasFlash()){  ?>
+
+	<div class="alert alert-info" role="alert"> <?php Session::flash() ; ?> </div>
+	<?php } ?>
+	<div class="started-template">
+		<?=$data['content']?>
+	</div>
+
+			
+	<h3>Footer will be here</h3>
+	</div>
+</body>
+</html>
