@@ -4,12 +4,7 @@
 ##disable for these file types
 #RewriteCond %{REQUERT_URI} !\.css$
 #RewriteCond %{REQUERT_URI} !\.png$
-#RewriteCond %{REQUERT_URI} !\.js$
-#RewriteCond %{REQUERT_URI} !\.zip$
-#RewriteCond %{REQUERT_URI} !\.html$
-#RewriteCond %{REQUERT_URI} !\.jpg
 
-#RewriteRule . framework/index.php
 
 
 <IfModule mod_rewrite.c>
